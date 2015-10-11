@@ -125,6 +125,12 @@
 						</table>
 						<br>
 						<button type="submit" name="submit">Submit</button>
+						<br>
+						<button name="submit" onClick="viewAllTrafficReport">view</button>
+					</form>
+					<form action="viewAllTrafficReport">
+					<button type="submit" name="submit" >view2</button>
+					
 					</form>
 				</div>
 			</div>

@@ -17,6 +17,9 @@
 	<!-- Reports models -->
 	<class>model.IncidentReport</class>
 	
+		<!-- Reports models -->
+	<class>model.TrafficReports</class>
+	
 	<!-- common models -->
 	<class>model.Location</class>
 	
