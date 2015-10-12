@@ -1,4 +1,4 @@
-package controller;
+package controller.restServices.trafficReport;
 
 
 import java.util.List;
@@ -14,19 +14,19 @@ import com.ibm.json.java.JSONObject;
 
 import dao.TrafficReportsDao;
 import dao.TrafficReportsDaoImpl;
-import model.TrafficReports;
+import model.TrafficReport;
 
 /**
  * Servlet implementation class viewAllTrafficReport
  */
-@WebServlet("/viewAllTrafficReport")
-public class viewAllTrafficReportServlet extends HttpServlet {
+@WebServlet("/viewAllTrafficReports")
+public class viewAllTrafficReportsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewAllTrafficReportServlet() {
+    public viewAllTrafficReportsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,9 +35,6 @@ public class viewAllTrafficReportServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		viewAllTrafficReport(request,response);
 	}
 
@@ -45,7 +42,6 @@ public class viewAllTrafficReportServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		viewAllTrafficReport(request,response);
 		
 	}
@@ -53,9 +49,7 @@ public class viewAllTrafficReportServlet extends HttpServlet {
 	void viewAllTrafficReport(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		TrafficReportsDao reportsDao = new TrafficReportsDaoImpl();
-		List<TrafficReports> reportList = reportsDao.getAllTrafficReports();
-		System.out.println("hello");
-		
+		List<TrafficReport> reportList = reportsDao.getAllTrafficReports();
 		
 		JSONArray result_data = new JSONArray();
 		JSONObject json = new JSONObject();

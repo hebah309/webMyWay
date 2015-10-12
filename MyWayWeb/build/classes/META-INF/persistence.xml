@@ -16,17 +16,24 @@
 	
 	<!-- Reports models -->
 	<class>model.IncidentReport</class>
-	
-		<!-- Reports models -->
-	<class>model.TrafficReports</class>
-	
+		
 	<!-- common models -->
 	<class>model.Location</class>
 	
+	<class>model.DriverDashBoard</class>
+	<class>model.DriverReport</class>
+	
+	<class>model.Event</class>
+	<class>model.Favorite</class>
+	
+	<class>model.TrafficReport</class>
+	<class>model.UserProfile</class>
+	
+	
 	<properties>
 		<property name="toplink.jdbc.user" value="root"/>
-		<property name="toplink.jdbc.password" value="password"/>
-		<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/myway1"/>
+		<property name="toplink.jdbc.password" value="admin"/>
+		<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/myway"/>
 		<property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 		<property name="toplink.ddl-generation" value="create-tables"/>
 		

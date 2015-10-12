@@ -4,12 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="TrafficReports")
-public class TrafficReports {
+public class TrafficReport {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -18,7 +18,10 @@ public class TrafficReports {
 	private String comment;
 	private String lat;
 	private String lon;
-	private String username;
+	
+	
+	@ManyToOne
+	private UserProfile userProfile;
 	
 	public int getReportId() {
 		return reportId;
@@ -50,16 +53,11 @@ public class TrafficReports {
 	public void setLon(String lon) {
 		this.lon = lon;
 	}
-	public String getUsername() {
-		return username;
+	public UserProfile getUserProfile() {
+		return userProfile;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
 	}
-	
-	
-	
-	
-	
-	
+
 }

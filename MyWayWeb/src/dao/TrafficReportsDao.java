@@ -2,17 +2,17 @@ package dao;
 
 import java.util.List;
 
-import model.TrafficReports;
+import model.TrafficReport;
 
 
 public interface TrafficReportsDao {
 	
 	
-	List<TrafficReports> getAllTrafficReports();
+	List<TrafficReport> getAllTrafficReports();
 	
 
 	
-    void addReport(TrafficReports trafficReport); 
+    void addReport(TrafficReport trafficReport); 
 	
 	
 

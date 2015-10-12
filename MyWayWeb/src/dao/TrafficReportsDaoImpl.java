@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import model.TrafficReports;
+import model.TrafficReport;
 
 public class TrafficReportsDaoImpl implements  TrafficReportsDao{
 	
@@ -18,7 +18,7 @@ public class TrafficReportsDaoImpl implements  TrafficReportsDao{
 	}
 	
 	
-	public List<TrafficReports> getAllTrafficReports() {
+	public List<TrafficReport> getAllTrafficReports() {
 		
 		EntityManager em = this.getMyWayEntityManager();
 		
@@ -27,7 +27,7 @@ public class TrafficReportsDaoImpl implements  TrafficReportsDao{
 		return query.getResultList();
 	}
 	
-	public void addReport(TrafficReports trafficReport) {
+	public void addReport(TrafficReport trafficReport) {
 		
 		EntityManager em = this.getMyWayEntityManager();
 		em.getTransaction().begin();
