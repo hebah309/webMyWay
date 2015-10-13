@@ -60,12 +60,14 @@ public class PostTrafficReportServlet extends HttpServlet {
 
 		JSONArray result_data = new JSONArray();
 
-		String type = request.getParameter("report_type");
-		Integer c = Integer.parseInt(type);
 		String comment = request.getParameter("report_comments");
 		String longtitude = request.getParameter("report_log");
 		String latitude = request.getParameter("report_lat");
 		String username = request.getParameter("username");
+		
+		String type = request.getParameter("report_type");
+		Integer c = Integer.parseInt(type);
+		
 
 		addReport(c, comment, longtitude, latitude, username);
 

@@ -50,7 +50,7 @@ public class GetUserProfileServlet extends HttpServlet {
 	private void getUserProfile(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
-		String userName = request.getParameter("userName");
+		String userName = request.getParameter("username");
 
 		UserProfileDoa userProfileDoa = new UserProfileDoaImpl();
 		UserProfile userProfile = userProfileDoa.retriveUserProfile(userName);

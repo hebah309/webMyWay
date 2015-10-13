@@ -69,7 +69,7 @@ public class UserProfileDoaImpl implements UserProfileDoa {
 		EntityManager em = this.getMyWayEntityManager();
 
 		Query q = em
-				.createQuery("select u from UserProfile u where u.username='"
+				.createQuery("select u from UserProfile u where u.userName='"
 						+ userName + "'");
 		List<UserProfile> us = q.getResultList();
 
@@ -85,21 +85,21 @@ public class UserProfileDoaImpl implements UserProfileDoa {
 			String email, String picture) {
 		EntityManager em = this.getMyWayEntityManager();
 
-		Query query = em.createQuery("update UserProfile u set u.password ='"
-				+ password + "' where u.username='" + username + "'");
+		Query query = em.createQuery("update UserProfile u set u.passWord ='"
+				+ password + "' where u.userName='" + username + "'");
 
 		em.getTransaction().begin();
 		query.executeUpdate();
 		em.getTransaction().commit();
 		query = em.createQuery("update UserProfile u set u.email ='" + email
-				+ "' where u.username='" + username + "'");
+				+ "' where u.userName='" + username + "'");
 
 		em.getTransaction().begin();
 		query.executeUpdate();
 		em.getTransaction().commit();
 
 		query = em.createQuery("update UserProfile u set u.profilePicture ='"
-				+ picture + "' where u.username='" + username + "'");
+				+ picture + "' where u.userName='" + username + "'");
 
 		em.getTransaction().begin();
 		query.executeUpdate();

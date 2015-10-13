@@ -22,7 +22,7 @@ public class TrafficReportsDaoImpl implements  TrafficReportsDao{
 		
 		EntityManager em = this.getMyWayEntityManager();
 		
-		Query query = em.createQuery("select reports from TrafficReports reports");
+		Query query = em.createQuery("select reports from TrafficReport reports");
 		
 		return query.getResultList();
 	}

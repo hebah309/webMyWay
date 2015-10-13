@@ -1,6 +1,7 @@
 package controller.restServices.event;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -67,8 +68,8 @@ void viewAllEvents(HttpServletRequest request, HttpServletResponse response) thr
 			jsonReport.put("name", e.getName());
 			jsonReport.put("description", e.getDescription());
 			jsonReport.put("image", e.getImage());
-			jsonReport.put("startDate", e.getStartDate());
-			jsonReport.put("endDate", e.getEndDate());
+			jsonReport.put("startDate", new Date().toString());
+			jsonReport.put("endDate", new Date().toString());
 			jsonReport.put("latitude", e.getLatitude());
 			jsonReport.put("longitude", e.getLongitude());
 			

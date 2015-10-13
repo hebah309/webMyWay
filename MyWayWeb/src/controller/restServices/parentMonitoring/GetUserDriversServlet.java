@@ -34,18 +34,20 @@ public class GetUserDriversServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getUserDriver(request,response);
+		getUserDrivers(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getUserDriver(request,response);
+		getUserDrivers(request,response);
 	}
 
-	private void getUserDriver(HttpServletRequest request,
+	private void getUserDrivers(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
+		
+		System.out.print("hellooooooooooooooooooooo");
 		
 		String parentUserName = request.getParameter("parentUserName");
 		

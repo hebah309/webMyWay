@@ -39,5 +39,18 @@ public class DriverDashBoard {
 	public void setCurrentLon(String currentLon) {
 		this.currentLon = currentLon;
 	}
+	public DriverDashBoard(){
+		
+	}
+	public DriverDashBoard(UserProfile userProfile, String battaryStatus,
+			String currentLat, String currentLon) {
+		super();
+		this.userProfile = userProfile;
+		this.battaryStatus = battaryStatus;
+		this.currentLat = currentLat;
+		this.currentLon = currentLon;
+	}
+	
+	
 
 }

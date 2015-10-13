@@ -18,7 +18,7 @@ import dao.UserProfileDoaImpl;
 /**
  * Servlet implementation class RequestEventServlet
  */
-@WebServlet("/RequestEventServlet")
+@WebServlet("/requestEvent")
 public class RequestEventServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

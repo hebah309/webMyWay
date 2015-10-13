@@ -46,7 +46,7 @@ public class CheckUsernameServlet extends HttpServlet {
 
 void check_username(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
-		String userName = request.getParameter("userName");
+		String userName = request.getParameter("username");
 		 
 		
 		UserProfileDoa userProfileDoa = new UserProfileDoaImpl();

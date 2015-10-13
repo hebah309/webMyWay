@@ -1,2 +1,5 @@
 /model/
 /META-INF/
+/dao/
+/WEB-INF/
+/controller/

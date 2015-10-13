@@ -44,8 +44,8 @@ public class LoginUserServlet extends  HttpServlet {
 	
 	void login(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
-		String userName = request.getParameter("userName");
-		String passWord = request.getParameter("passWord");
+		String userName = request.getParameter("username");
+		String passWord = request.getParameter("password");
 		
 		UserProfileDoa userProfileDoa = new UserProfileDoaImpl();
 		UserProfile user = userProfileDoa.login(userName, passWord);

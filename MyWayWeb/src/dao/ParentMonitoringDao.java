@@ -1,10 +1,10 @@
 package dao;
 
 import java.util.List;
-
 import model.DriverDashBoard;
 import model.DriverReport;
 import model.UserProfile;
+import model.DriverDestination;
 
 public interface ParentMonitoringDao {
 	
@@ -16,5 +16,11 @@ public interface ParentMonitoringDao {
 	
 	
 	public DriverDashBoard getDriverDashBoard(UserProfile driverProfile);
+	
+	public void setDriverDestination(DriverDestination driverDestination);
+
+	public DriverDestination getDriverDestination(UserProfile driverProfile);
+
+	public void setDriverDashBoard(DriverDashBoard driverDashBoard);
 
 }

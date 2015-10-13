@@ -3,6 +3,7 @@ package controller.restServices.trafficReport;
 
 import java.util.List;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,6 +48,8 @@ public class viewAllTrafficReportsServlet extends HttpServlet {
 	}
 
 	void viewAllTrafficReport(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		
+		System.out.print("hellooooooooooooooooooooo");
 		
 		TrafficReportsDao reportsDao = new TrafficReportsDaoImpl();
 		List<TrafficReport> reportList = reportsDao.getAllTrafficReports();

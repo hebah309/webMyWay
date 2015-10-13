@@ -27,6 +27,7 @@ public class UserProfile {
 	private String passWord;
 	private String email;
 
+	@Column(columnDefinition="LONGTEXT")
 	private String profilePicture;
 	
 	private String parent;
@@ -46,6 +47,9 @@ public class UserProfile {
 	
 	@OneToOne(mappedBy = "userProfile", cascade=CascadeType.ALL)
 	DriverDashBoard driverDashBoard;
+	
+	@OneToOne(mappedBy = "userProfile", cascade=CascadeType.ALL)
+	DriverDestination driverDestination;
 
 	public int getId() {
 		return Id;
