@@ -34,10 +34,10 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 	@Override
 	public void addDriver(String parentUserName, UserProfile driver) {
 
-		driver.setParent(parentUserName);
-
 		EntityManager em = this.getMyWayEntityManager();
+		em.merge(driver);
 		em.getTransaction().begin();
+		driver.setParent(parentUserName);
 		em.persist(driver);
 		em.getTransaction().commit();
 

@@ -61,7 +61,7 @@ void requestEvent(HttpServletRequest request, HttpServletResponse response) thro
 		Date startDate = new Date();
 		Date endDate =  new Date();
 		
-		Event e = new Event(userProfile, name, category, description, startDate, endDate, latitude, longitude, image, "pending");
+		Event e = new Event(userProfile, name, category, description, startDate, endDate, latitude, longitude, image, "approved");
 		
 		EventsDao edi = new EventsDaoImpl();
 		

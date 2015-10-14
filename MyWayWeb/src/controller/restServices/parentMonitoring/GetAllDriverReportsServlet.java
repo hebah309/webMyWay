@@ -75,7 +75,7 @@ public class GetAllDriverReportsServlet extends HttpServlet {
 			JSONObject jsonReport = new JSONObject();
 			jsonReport.put("report_date", driverReport.getDate());
 			jsonReport.put("report_lat", driverReport.getLat());
-			jsonReport.put("report_log", driverReport.getLon());
+			jsonReport.put("report_lon", driverReport.getLon());
 			jsonReport.put("report_reason", driverReport.getReason());
 			jsonReport.put("report_time", driverReport.getTime());
 			
