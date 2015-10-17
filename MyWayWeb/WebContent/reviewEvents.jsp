@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Review PointsOfInterest</title>
+<title>Review Events</title>
 <%@include file="header.jsp"%>
-<script type="text/javascript" src="js/PointsOfInterest.js"></script>
+<script type="text/javascript" src="js/events.js"></script>
 <link
 	href='css/table.css'
 	rel='stylesheet' type='text/css'>
@@ -15,14 +15,14 @@
 
 </style>
 </head>
-<body onload="loadPOIs()">
+<body onload="loadEvents()">
 	<!-- Header -->
 	<div id="header">
 		<div id="nav-wrapper">
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="#">Review Points</a></li>
+					<li><a href="#">Review Events</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -40,19 +40,23 @@
 				</div>
 				<!-- Content -->
 				<div id="content" class="8u skel-cell-important">
-				<form id="formApprove" action="PointsOfInterest" method="post">
-					<table id="pointsTable" class="CSSTableGenerator">
+				<form id="formApprove" action="reviewEvents" method="post">
+					<table id="eventsTable" class="CSSTableGenerator">
 						<thead>
 							<tr>
-								<td>point of Interest Name</td>
-								<td>Location</td>
+								<td>Event Name</td>
+								<td>Description</td>
+								<td>Category</td>
+								<td>Start Date</td>
+								<td>End Date</td>
+								<td>image</td>
+								<td>location</td>
 								<td>Approval</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr id="hiddenid"></tr>
 							<tr id="hiddenChoice"></tr>
-							<tr id="action"><td><input type="hidden" name="action" value="ReviewPOI"></td></tr>
 						</tbody>
 					</table>
 					<br/>

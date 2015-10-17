@@ -1,16 +1,13 @@
 package controller;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import model.UserInfo;
+import model.UserProfile;
 
 /**
  * Servlet implementation class CheckLoginServlet
@@ -49,23 +46,21 @@ public class CheckLoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 
-		UserInfo user = (UserInfo) session.getAttribute("user");
+		UserProfile user = (UserProfile) session.getAttribute("user");
 
 		if (user != null) {
-			if ("admin".equalsIgnoreCase(user.getUserRole())) {
+			String isAdmin = (String)session.getAttribute("isAdmin");
+			
+			if ("true".equalsIgnoreCase(isAdmin)) {
 				response.sendRedirect("admin.jsp");
 			} else {
 				response.sendRedirect("userHome.jsp");
 			}
-
 		}
-
 		else
-
 		{
 			response.sendRedirect("userlogin.jsp");
 		}
-
 	}
 
 }

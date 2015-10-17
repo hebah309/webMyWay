@@ -38,21 +38,16 @@ font-weight: bold;
 				<div id="content" class="8u skel-cell-important">
 					<section>
 						<header>
-							<h2>Welcome <c:out value="${sessionScope.user.firstName}"></c:out>, <c:out value="${sessionScope.user.lastName}"></c:out></h2>
+							<h2>Welcome <c:out value="${sessionScope.user.userName}"></c:out></h2>
 						</header>
-						<h3 class="title"> First Name:</h3>
-						<h5><c:out value="${sessionScope.user.firstName}"></c:out></h5>
-						<h3 class="title"> Last Name:</h3>
-						<h5><c:out value="${sessionScope.user.lastName}"></c:out></h5>
-						<h3 class="title"> User Name:</h3>
-						<h5><c:out value="${sessionScope.user.userName}"></c:out></h5>
-						<h3 class="title"> E-mail:</h3>
-						<h5><c:out value="${sessionScope.user.email}"></c:out></h5>
-						<h3 class="title"> Mobile:</h3>
-						<h5><c:out value="${sessionScope.user.mobile}"></c:out></h5>
-						<h3 class="title"> Role:</h3>
-						<h5><c:out value="${sessionScope.user.userRole}"></c:out></h5>
-						<h3 class="title"> Your location:</h3>
+								<img alt="" src="images/uploadedImages/${sessionScope.user.profilePicture}">
+							
+								<h3 class="title"> User Name:</h3>
+								<h3><c:out value="${sessionScope.user.userName}"></c:out></h3>
+								<h3 class="title"> E-mail:</h3>
+								<h3><c:out value="${sessionScope.user.email}"></c:out></h3>
+							
+						<br/><br/>
 						<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     
 <br>

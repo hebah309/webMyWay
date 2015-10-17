@@ -1,15 +1,22 @@
 package controller.restServices.event;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import model.Event;
 import model.UserProfile;
+
 import com.ibm.json.java.JSONObject;
+
 import dao.EventsDao;
 import dao.EventsDaoImpl;
 import dao.UserProfileDoa;
@@ -58,10 +65,22 @@ void requestEvent(HttpServletRequest request, HttpServletResponse response) thro
 		String image = (String) request.getParameter("image");
 		String latitude = (String) request.getParameter("latitude");
 		String longitude = (String) request.getParameter("longitude");
-		Date startDate = new Date();
-		Date endDate =  new Date();
 		
-		Event e = new Event(userProfile, name, category, description, startDate, endDate, latitude, longitude, image, "approved");
+		//2013-12-4
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date startDate = new Date();
+		Date endDate = new Date();
+		try {
+			startDate = dateFormat.parse((String) request.getParameter("startDate"));
+			endDate =  dateFormat.parse((String) request.getParameter("endDate"));
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		Event e = new Event(userProfile, name, category, description, startDate, endDate, latitude, longitude, image, "Pending");
 		
 		EventsDao edi = new EventsDaoImpl();
 		

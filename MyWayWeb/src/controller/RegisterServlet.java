@@ -8,59 +8,52 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.UserInfoDoa;
-import dao.UserInfoDoaImpl;
-import model.UserInfo;
+import dao.UserProfileDoa;
+import dao.UserProfileDoaImpl;
+import model.UserProfile;
 
 @WebServlet("/Register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public RegisterServlet() {
-        super();
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		register(request,response);
+	public RegisterServlet() {
+		super();
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		register(request,response);
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		register(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		register(request, response);
+	}
 
 	private void register(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		UserInfo ui = new UserInfo();
+		UserProfile userProfile = new UserProfile();
 
-		ui.setFirstName(request.getParameter("FirstName"));
-		ui.setLastName(request.getParameter("Lastname"));
-		ui.setUserName(request.getParameter("username"));
-		ui.setPassWord(request.getParameter("password"));
-		ui.setEmail(request.getParameter("email"));
-		ui.setMobile(request.getParameter("mobile"));
-		ui.setUserRole(request.getParameter("userRole").trim());
+		userProfile.setUserName(request.getParameter("username"));
+		userProfile.setPassWord(request.getParameter("password"));
+		userProfile.setEmail(request.getParameter("email"));
 		
-		UserInfoDoa userInfoDoa = new UserInfoDoaImpl();
+		UserProfileDoa userProfileDoa = new UserProfileDoaImpl();
 		
-		boolean userExists = userInfoDoa.registerUser(ui);
-		
-		if(userExists){
+		UserProfile existedUser = userProfileDoa.checkUserName(userProfile.getUserName());
+				
+		if(existedUser == null){
+			userProfileDoa.register(userProfile);
 			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/register.jsp?userExists=true");
+					.getRequestDispatcher("/userlogin.jsp");
 			dispatcher.forward(request, response);
 		}else{
 			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("/userlogin.jsp");
+					.getRequestDispatcher("/register.jsp?userExists=true");
 			dispatcher.forward(request, response);
 		}
 		
 		
 	}
-
 }

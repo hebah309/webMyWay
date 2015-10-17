@@ -64,11 +64,7 @@
 						<form method="post" onsubmit="return validation()" action="Register" id="form">
 							<fieldset width=200px>
 								<legend>Personal information:</legend>
-								<p>First Name:</p>
-								<input name="FirstName" type="text" required>
-								<pre class="req"> * </pre>
-								<p>Last Name:</p>
-								<input name="Lastname" type="text" required>
+				
 								<pre class="req"> * </pre>
 								<p>User Name:</p>
 								<input name="username" type="text" required>
@@ -89,19 +85,8 @@
 								<p>Confirm Password:</p>
 								<input name="conPassword" type="password" id="conPassword" required>
 								<pre class="req"> * </pre>
-								<p>Role:</p>
-								<select name="userRole">
-									<option value="user ">user</option>
-									<option value="Parent">Parent</option>
-									<pre class="req"> * </pre>
-								</select>
 								<p>E-mail:</p>
 								<input name="email" type="email" required>
-								<pre class="req">  </pre>
-								<p>Mobile:</p>
-								<input name="mobile" type="tel" required>
-								<pre class="req">  </pre>
-
 								<br> <br> <input type="submit" name="sumbit"
 									value="submit" />
 									<input type="button" onclick="clearForm ()"

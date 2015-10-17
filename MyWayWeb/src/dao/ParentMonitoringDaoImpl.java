@@ -49,7 +49,7 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		EntityManager em = this.getMyWayEntityManager();
 		List<DriverReport> driverReports = null;
 		Query q = em
-				.createQuery("select d from DriverReport d,UserProfile u where u.Id="
+				.createQuery("select d from DriverReport d where d.userProfile.Id="
 						+ driverProfile.getId());
 		driverReports = q.getResultList();
 		return driverReports;
@@ -60,7 +60,7 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		EntityManager em = this.getMyWayEntityManager();
 		DriverDashBoard driverDashBoard = null;
 		Query q = em
-				.createQuery("select d from DriverDashBoard d,UserProfile u where u.Id="
+				.createQuery("select d from DriverDashBoard dwhere d.userProfile.Id="
 						+ driverProfile.getId());
 		driverDashBoard = (DriverDashBoard)q.getSingleResult();
 		return driverDashBoard;
@@ -79,7 +79,7 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		EntityManager em = this.getMyWayEntityManager();
 		DriverDestination driverDestination = null;
 		Query q = em
-				.createQuery("select d from DriverDestination d,UserProfile u where u.Id="
+				.createQuery("select d from DriverDestination d where d.userProfile.Id="
 						+ driverProfile.getId());
 		driverDestination = (DriverDestination)q.getSingleResult();
 		return driverDestination;

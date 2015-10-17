@@ -3,23 +3,7 @@
   
 	<persistence-unit name="myway">
 	<provider>oracle.toplink.essentials.PersistenceProvider</provider>
-	
-	 <!-- parents Monitoring models -->
-	<class>model.Journey</class>
-	
-	 <!-- point of interest models -->
-	<class>model.PointOfInterest</class>
-	<class>model.POIType</class> 
-	
-	 <!-- User Profile models -->
-	<class>model.UserInfo</class>
-	
-	<!-- Reports models -->
-	<class>model.IncidentReport</class>
 		
-	<!-- common models -->
-	<class>model.Location</class>
-	
 	<class>model.DriverDashBoard</class>
 	<class>model.DriverDestination</class>
 	<class>model.DriverReport</class>
@@ -34,7 +18,7 @@
 	<properties>
 		<property name="toplink.jdbc.user" value="root"/>
 		<property name="toplink.jdbc.password" value="admin"/>
-		<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/myway1"/>
+		<property name="toplink.jdbc.url" value="jdbc:mysql://localhost:3306/myway"/>
 		<property name="toplink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 		<property name="toplink.ddl-generation" value="create-tables"/>
 		

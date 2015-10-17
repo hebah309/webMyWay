@@ -46,7 +46,6 @@
 						<li><a href="home.jsp">Home</a></li>
 						<li><a href="CheckLogin">Log In</a></li>
 				        <li><a href="register.jsp">Register</a></li>
-						 <!-- <li><a href="CheckLogin">Admin</a></li>  -->
 					</ul>
 				</nav>
 			</div>

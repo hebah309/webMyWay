@@ -31,7 +31,7 @@ public class FavoritesDaoImpl implements FavoritesDao{
 		// TODO Auto-generated method stub
 		EntityManager em = this.getMyWayEntityManager();
 		List<Favorite> favs = null;
-		Query q = em.createQuery("select f from Favorite f,UserProfile u where u.Id="+id);
+		Query q = em.createQuery("select f from Favorite f where f.userProfile.Id="+id);
 		favs = q.getResultList();
 		return favs;
 	}
@@ -42,7 +42,7 @@ public class FavoritesDaoImpl implements FavoritesDao{
 		EntityManager em = this.getMyWayEntityManager();
 		Favorite fav;
 
-		Query q = em.createQuery("select f from Favorite f,UserProfile u where u.Id="+id+" and f.name='"+name+"'");
+		Query q = em.createQuery("select f from Favorite f where f.userProfile.Id="+id+" and f.name='"+name+"'");
 		fav = (Favorite) q.getSingleResult();
 
 		em.getTransaction().begin();

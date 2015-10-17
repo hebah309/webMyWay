@@ -10,9 +10,9 @@ public interface TrafficReportsDao {
 	
 	List<TrafficReport> getAllTrafficReports();
 	
-
-	
     void addReport(TrafficReport trafficReport); 
+    
+    void deleteReport(String reportId); 
 	
 	
 

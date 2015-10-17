@@ -32,7 +32,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: pyrmont,
-    zoom: 11
+    zoom: 8
   });
 
   var marker = new google.maps.Marker({
@@ -71,7 +71,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				</div>
 				<!-- Content -->
 				<div id="content" class="8u skel-cell-important">
-					<h1>Report Location</h1>
+					<h1>Location</h1>
     				<div id="map-canvas" style="height: 500px;width: 800px;"></div>
 				</div>
 			</div>

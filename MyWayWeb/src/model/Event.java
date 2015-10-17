@@ -107,6 +107,12 @@ public class Event {
 		
 	}
 	
+	public int getEventId() {
+		return eventId;
+	}
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
 	public Event(UserProfile userProfile, String name, String category,
 			String description, Date startDate, Date endDate, String latitude,
 			String longitude, String image, String status) {
