@@ -52,6 +52,20 @@ public class DriverReport {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	public DriverReport(){
+		
+	}
+	public DriverReport(UserProfile userProfile, String reason,
+			String lat, String lon, String date, String time) {
+		super();
+		this.userProfile = userProfile;
+		this.reason = reason;
+		this.lat = lat;
+		this.lon = lon;
+		this.date = date;
+		this.time = time;
+	}
+	
 	
 
 }

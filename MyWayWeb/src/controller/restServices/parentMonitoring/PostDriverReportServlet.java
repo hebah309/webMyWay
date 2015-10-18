@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.DriverDashBoard;
+import model.DriverReport;
 import model.UserProfile;
 
 import com.ibm.json.java.JSONArray;
@@ -52,13 +53,13 @@ public class PostDriverReportServlet extends HttpServlet {
 	private void postDriverReport(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 
-		String reportLan = request.getParameter("report_lon");
+		String reportLon = request.getParameter("report_lon");
 		
 		String reportLat = request.getParameter("report_lat");
 		
 		String reportReason = request.getParameter("report_reason");
 		
-		String reportTome = request.getParameter("report_time");
+		String reportTime = request.getParameter("report_time");
 		
 		String reportDate = request.getParameter("report_date");
 		
@@ -69,12 +70,12 @@ public class PostDriverReportServlet extends HttpServlet {
 		UserProfileDoa userProfileDoa = new UserProfileDoaImpl();
 		UserProfile driverProfile = userProfileDoa.retriveUserProfile(driverUserName);
 		
-		//DriverDashBoard driverDashBoard = new DriverDashBoard(driverProfile, battaryStatus, currentLat, currentLon) ;
+		DriverReport driverReport = new DriverReport(driverProfile, reportReason, reportLat, reportLon, reportDate, reportTime);
 		
 		JSONObject json = new JSONObject();
 		
-		//ParentMonitoringDao parentMonitoringDao = new ParentMonitoringDaoImpl();
-		//parentMonitoringDao.setDriverDashBoard(driverDashBoard);
+		ParentMonitoringDao parentMonitoringDao = new ParentMonitoringDaoImpl();
+		parentMonitoringDao.addDriverReports(driverReport);
 			
 		json.put("message", "success");
 		json.put("result_code", 0);

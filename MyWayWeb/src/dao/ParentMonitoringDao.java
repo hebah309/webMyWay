@@ -14,6 +14,7 @@ public interface ParentMonitoringDao {
 
 	public List<DriverReport> getAllDriverReports(UserProfile driverProfile);
 	
+	public void addDriverReports(DriverReport driverReport);
 	
 	public DriverDashBoard getDriverDashBoard(UserProfile driverProfile);
 	

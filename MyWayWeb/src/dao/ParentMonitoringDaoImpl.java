@@ -97,4 +97,12 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		em.getTransaction().commit();
 	}
 
+	@Override
+	public void addDriverReports(DriverReport driverReport) {
+		EntityManager em = this.getMyWayEntityManager();
+		em.getTransaction().begin();
+		em.merge(driverReport);
+		em.getTransaction().commit();
+	}
+
 }
