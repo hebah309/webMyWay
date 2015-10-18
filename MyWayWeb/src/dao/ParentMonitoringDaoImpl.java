@@ -60,7 +60,7 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		EntityManager em = this.getMyWayEntityManager();
 		DriverDashBoard driverDashBoard = null;
 		Query q = em
-				.createQuery("select d from DriverDashBoard dwhere d.userProfile.Id="
+				.createQuery("select d from DriverDashBoard d where d.userProfile.Id="
 						+ driverProfile.getId());
 		driverDashBoard = (DriverDashBoard)q.getSingleResult();
 		return driverDashBoard;
@@ -87,9 +87,13 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 
 	@Override
 	public void setDriverDashBoard(DriverDashBoard driverDashBoard) {
+		DriverDashBoard presistedDashBoard  = this.getDriverDashBoard(driverDashBoard.getUserProfile());
+		presistedDashBoard.setBattaryStatus(driverDashBoard.getBattaryStatus());
+		presistedDashBoard.setCurrentLat(driverDashBoard.getCurrentLat());
+		presistedDashBoard.setCurrentLon(driverDashBoard.getCurrentLon());
 		EntityManager em = this.getMyWayEntityManager();
 		em.getTransaction().begin();
-		em.persist(driverDashBoard);
+		em.merge(presistedDashBoard);
 		em.getTransaction().commit();
 	}
 

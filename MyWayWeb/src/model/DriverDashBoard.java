@@ -50,6 +50,13 @@ public class DriverDashBoard {
 		this.currentLat = currentLat;
 		this.currentLon = currentLon;
 	}
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+	
 	
 	
 
