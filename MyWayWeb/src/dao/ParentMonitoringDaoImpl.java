@@ -38,7 +38,7 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		em.merge(driver);
 		em.getTransaction().begin();
 		driver.setParent(parentUserName);
-		em.persist(driver);
+		em.merge(driver);
 		em.getTransaction().commit();
 
 	}
