@@ -68,8 +68,10 @@ void viewAllEvents(HttpServletRequest request, HttpServletResponse response) thr
 			jsonReport.put("name", e.getName());
 			jsonReport.put("description", e.getDescription());
 			jsonReport.put("image", e.getImage());
-			jsonReport.put("startDate", new Date().toString());
-			jsonReport.put("endDate", new Date().toString());
+			
+			jsonReport.put("startDate", e.getStartDate().toString().substring(0,10)+","+e.getStartDate().toString().substring(e.getStartDate().toString().length()-4,e.getStartDate().toString().length()));
+			jsonReport.put("endDate", e.getEndDate().toString().substring(0,10)+","+e.getEndDate().toString().substring(e.getEndDate().toString().length()-4,e.getEndDate().toString().length()));
+			
 			jsonReport.put("latitude", e.getLatitude());
 			jsonReport.put("longitude", e.getLongitude());
 			
