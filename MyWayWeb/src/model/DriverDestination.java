@@ -32,6 +32,13 @@ public class DriverDestination {
 	public void setLon(String lon) {
 		Lon = lon;
 	}
+	
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
 	public DriverDestination(){
 		
 	}

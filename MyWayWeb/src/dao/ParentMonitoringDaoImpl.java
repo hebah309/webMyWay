@@ -67,14 +67,6 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 	}
 
 	@Override
-	public void setDriverDestination(DriverDestination driverDestination) {
-		EntityManager em = this.getMyWayEntityManager();
-		em.getTransaction().begin();
-		em.persist(driverDestination);
-		em.getTransaction().commit();
-	}
-
-	@Override
 	public DriverDestination getDriverDestination(UserProfile driverProfile) {
 		EntityManager em = this.getMyWayEntityManager();
 		DriverDestination driverDestination = null;
@@ -96,6 +88,18 @@ public class ParentMonitoringDaoImpl implements ParentMonitoringDao {
 		em.merge(presistedDashBoard);
 		em.getTransaction().commit();
 	}
+	
+	@Override
+	public void setDriverDestination(DriverDestination driverDestination) {
+		DriverDestination presistedDestination  = this.getDriverDestination(driverDestination.getUserProfile());
+		presistedDestination.setLat(driverDestination.getLat());
+		presistedDestination.setLon(driverDestination.getLon());
+		EntityManager em = this.getMyWayEntityManager();
+		em.getTransaction().begin();
+		em.merge(presistedDestination);
+		em.getTransaction().commit();
+	}
+
 
 	@Override
 	public void addDriverReports(DriverReport driverReport) {

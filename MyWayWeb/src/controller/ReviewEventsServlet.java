@@ -45,7 +45,7 @@ public class ReviewEventsServlet extends HttpServlet {
 			if("A".equalsIgnoreCase(selectedChoice)) selectedChoice = "Approved";
 			if("R".equalsIgnoreCase(selectedChoice)) selectedChoice = "Rejected";
 			ReviewEvent(selectedId,selectedChoice);
-			response.sendRedirect("reviewPointsOfInterest.jsp");
+			response.sendRedirect("reviewEvents.jsp");
 		}else{
 			viewPendingEvents(request, response);
 		}	
@@ -63,7 +63,7 @@ public class ReviewEventsServlet extends HttpServlet {
 			if("A".equalsIgnoreCase(selectedChoice)) selectedChoice = "approved";
 			if("R".equalsIgnoreCase(selectedChoice)) selectedChoice = "rejected";
 			ReviewEvent(selectedId,selectedChoice);
-			response.sendRedirect("reviewPointsOfInterest.jsp");
+			response.sendRedirect("reviewEvents.jsp");
 		}else{
 			viewPendingEvents(request, response);
 		}
