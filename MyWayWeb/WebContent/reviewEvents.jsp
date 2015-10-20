@@ -49,7 +49,6 @@
 								<td>Category</td>
 								<td>Start Date</td>
 								<td>End Date</td>
-								<td>image</td>
 								<td>location</td>
 								<td>Approval</td>
 							</tr>

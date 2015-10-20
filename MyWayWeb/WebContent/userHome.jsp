@@ -40,7 +40,7 @@ font-weight: bold;
 						<header>
 							<h2>Welcome <c:out value="${sessionScope.user.userName}"></c:out></h2>
 						</header>
-								<img alt="" src="images/uploadedImages/${sessionScope.user.profilePicture}">
+								<img alt="" src="images/uploadedImages/avatar.jpg">
 							
 								<h3 class="title"> User Name:</h3>
 								<h3><c:out value="${sessionScope.user.userName}"></c:out></h3>

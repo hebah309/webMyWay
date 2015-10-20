@@ -34,6 +34,10 @@ function initialize() {
     center: pyrmont,
     zoom: 8
   });
+  
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+
 
   var marker = new google.maps.Marker({
       position: pyrmont,

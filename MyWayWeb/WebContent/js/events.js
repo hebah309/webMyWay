@@ -24,7 +24,6 @@ function loadEvents() {
 						var cell5 = row.insertCell(4);
 						var cell6 = row.insertCell(5);
 						var cell7 = row.insertCell(6);
-						var cell8 = row.insertCell(7);
 
 						cell1.innerHTML = '<font size="3">'+events[i].name+'</font>';
 						cell2.innerHTML = '<font size="3">'+events[i].description+'</font>';
@@ -32,9 +31,8 @@ function loadEvents() {
 						cell4.innerHTML = '<font size="3">'+events[i].startDate+'</font>';
 						cell5.innerHTML = '<font size="3">'+events[i].endDate+'</font>';
 												
-						cell6.innerHTML ="<a href='/MyWayWeb/viewImage.jsp?image="+events[i].image+"'><font size='4'>View Image</font></a>";
-						cell7.innerHTML = "<a href='/MyWayWeb/viewMapsbyCoordinates.jsp?lat="+events[i].latitude+"&lon="+events[i].longitude+"'><font size='4'>View Map</font></a>";
-						cell8.innerHTML = ('<input type="radio" name="choice" value="approve" id="choiceA'
+						cell6.innerHTML = "<a href='/MyWayWeb/viewMapsbyCoordinates.jsp?lat="+events[i].latitude+"&lon="+events[i].longitude+"'><font size='4'>View Map</font></a>";
+						cell7.innerHTML = ('<input type="radio" name="choice" value="approve" id="choiceA'
 								+ id
 								+ '">'
 								+ 'Approve <br>'

@@ -51,7 +51,6 @@
 						<table id="roadReports" class="CSSTableGenerator">
 <!-- 						style="border-color: black; border-style: solid; border-width: 3px; border-collapse: collapse;"
  -->							<tr>
-								<th>Report ID</th>
 								<th>Report Type</th>
 								<th>Report Comment</th>
 								<th>Location</th>
@@ -66,13 +65,34 @@
 
 									out.println("<tr>");
 
+									String reportType = "";
+									int reportTypeId = list.get(i).getReportTypeId();
+									
+									switch (reportTypeId) {
+						            case 1:  reportType = "Other";
+						                     break;
+						            case 2:  reportType = "Construction";
+						                     break;
+						            case 3:  reportType = "On Road";
+						                     break;
+						            case 4:  reportType = "Moderate";
+						                     break;
+						            case 5:  reportType = "Heavy";
+						                     break;
+						            case 6:  reportType = "stand Still";
+						                     break;
+						            case 7:  reportType = "Minor Accident";
+						                     break;
+						            case 8:  reportType = "Major Accident";
+						                     break;
+						            default: reportType = "other";
+						                     break;
+						        }
+									
 									out.print("<td><font size='3'>");
-									out.print(list.get(i).getReportId());
+									out.print(reportType);
 									out.print("</font></td>");
 
-									out.print("<td><font size='3'>");
-									out.print(list.get(i).getReportTypeId());
-									out.print("</font></td>");
 
 									out.print("<td><font size='3'>");
 									out.print(list.get(i).getComment());
